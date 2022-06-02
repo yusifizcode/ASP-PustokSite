@@ -1,11 +1,3 @@
-C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.csproj.AssemblyReference.cache
-C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.AssemblyInfoInputs.cache
-C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.AssemblyInfo.cs
-C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.csproj.CoreCompileInputs.cache
-C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.RazorAssemblyInfo.cache
-C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.RazorAssemblyInfo.cs
 C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\bin\Debug\netcoreapp3.1\appsettings.Development.json
 C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\bin\Debug\netcoreapp3.1\Pustok.exe
@@ -56,6 +48,13 @@ C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\bin\Debug\netcoreapp3.1\runtimes\
 C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.AssemblyInfoInputs.cache
+C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.AssemblyInfo.cs
+C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.csproj.CoreCompileInputs.cache
+C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.RazorAssemblyInfo.cache
+C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.RazorAssemblyInfo.cs
 C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\staticwebassets\Pustok.StaticWebAssets.Manifest.cache
 C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\staticwebassets\Pustok.StaticWebAssets.xml
 C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\scopedcss\bundle\Pustok.styles.css
@@ -73,3 +72,4 @@ C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.cs
 C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.dll
 C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.pdb
 C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.genruntimeconfig.cache
+C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.csproj.AssemblyReference.cache

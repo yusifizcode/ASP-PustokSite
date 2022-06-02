@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Pustok.DAL;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +26,11 @@ namespace Pustok
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+
+            services.AddDbContext<PustokDbContext>(options =>
+            {
+                options.UseSqlServer(@"Server=DESKTOP-1TG370G;Database=Pustok;Trusted_Connection=TRUE");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

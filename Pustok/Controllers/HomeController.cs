@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Pustok.DAL;
+using Pustok.ViewModels;
 //using Pustok.Models;
 using System;
 using System.Collections.Generic;
@@ -11,11 +13,23 @@ namespace Pustok.Controllers
 {
     public class HomeController : Controller
     {
+        private PustokDbContext _context;
+
+        public HomeController(PustokDbContext context)
+        {
+            _context = context;
+        }
 
         public IActionResult Index()
         {
-            return View();
+            HomeViewModel homeVM = new HomeViewModel
+            {
+                HomeSliders = _context.HomeSliders.ToList(),
+            };
+            return View(homeVM);
         }
-
     }
 }
+
+
+
