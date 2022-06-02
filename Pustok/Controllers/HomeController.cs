@@ -25,6 +25,7 @@ namespace Pustok.Controllers
             HomeViewModel homeVM = new HomeViewModel
             {
                 HomeSliders = _context.HomeSliders.ToList(),
+                HomeFeatures = _context.HomeFeatures.ToList()
             };
             return View(homeVM);
         }

@@ -8,6 +8,7 @@ namespace Pustok.ViewModels
 {
     public class HomeViewModel
     {
-       public List<HomeSlider> HomeSliders;
+        public List<HomeSlider> HomeSliders;
+        public List<HomeFeature> HomeFeatures;
     }
 }
