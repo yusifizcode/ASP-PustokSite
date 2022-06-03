@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 namespace Pustok.Areas.Manage.Controllers
 {
     [Area("manage")]
-    public class AuthorController : Controller
+    public class BookController : Controller
     {
-        private readonly PustokDbContext _context;
+        private PustokDbContext _context;
 
-        public AuthorController(PustokDbContext context)
+        public BookController(PustokDbContext context)
         {
-            this._context = context;
+            _context = context;
         }
         public IActionResult Index()
         {
-            var authors = _context.Authors.Include(x => x.Books).ToList();
-            return View(authors);
+            var books = _context.Books.Include(x => x.Author).Include(x => x.Genre).ToList();
+            return View(books);
         }
     }
 }

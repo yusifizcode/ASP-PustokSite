@@ -150,3 +150,6 @@ C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.dl
 C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.pdb
 C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.genruntimeconfig.cache
 C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Pustok.csproj.AssemblyReference.cache
+C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Author\Index.cshtml.g.cs
+C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Genre\Index.cshtml.g.cs
+C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Book\Index.cshtml.g.cs

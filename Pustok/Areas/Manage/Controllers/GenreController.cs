@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Pustok.DAL;
 using System;
 using System.Collections.Generic;
@@ -9,18 +8,18 @@ using System.Threading.Tasks;
 namespace Pustok.Areas.Manage.Controllers
 {
     [Area("manage")]
-    public class AuthorController : Controller
+    public class GenreController : Controller
     {
         private readonly PustokDbContext _context;
 
-        public AuthorController(PustokDbContext context)
+        public GenreController(PustokDbContext context)
         {
             this._context = context;
         }
         public IActionResult Index()
         {
-            var authors = _context.Authors.Include(x => x.Books).ToList();
-            return View(authors);
+            var genres = _context.Genres.ToList();
+            return View(genres);
         }
     }
 }
