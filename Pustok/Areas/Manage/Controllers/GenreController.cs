@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Pustok.DAL;
+using Pustok.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,8 +20,77 @@ namespace Pustok.Areas.Manage.Controllers
         }
         public IActionResult Index()
         {
-            var genres = _context.Genres.ToList();
+            var genres = _context.Genres.Include(x=>x.Books).ToList();
             return View(genres);
+        }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Genre genre)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View();
+            }
+
+            if(_context.Genres.Any(x=>x.Name == genre.Name))
+            {
+                ModelState.AddModelError("Name", "This genre already exist!");
+                return View();
+            }
+
+            _context.Genres.Add(genre);
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Edit(int id)
+        {
+            Genre genre = _context.Genres.FirstOrDefault(x=>x.Id == id);
+            if (genre == null)
+            {
+                return RedirectToAction("error", "dashboard");
+            }
+
+            return View(genre);
+        }
+
+        [HttpPost]
+        public IActionResult Edit(int id ,Genre genre)
+        {
+            Genre existGenre = _context.Genres.FirstOrDefault(x=>x.Id == id);
+            if(existGenre == null)
+            {
+                return RedirectToAction("error", "dashboard");
+            }
+
+            if(_context.Genres.Any(x =>x.Id!=existGenre.Id && x.Name == existGenre.Name))
+            {
+                ModelState.AddModelError("Name", "This genre already exist!");
+                return View();
+            }
+
+            existGenre.Name = genre.Name;
+            _context.SaveChanges();
+            return RedirectToAction("index");
+        }
+
+        public IActionResult Delete(int id)
+        {
+            Genre genre = _context.Genres.FirstOrDefault(x=>x.Id==id);
+
+            if(genre == null)
+            {
+                return RedirectToAction("error", "dashboard");
+            }
+
+            _context.Genres.Remove(genre);
+            _context.SaveChanges();
+            return RedirectToAction("index");
         }
     }
 }

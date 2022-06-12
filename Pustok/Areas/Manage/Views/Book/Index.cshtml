@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 mx-auto">
-            <a class="btn btn-primary">Create</a>
+            <a asp-action="create" class="btn btn-primary">Create</a>
         </div>
         <div class="col-md-10 mx-auto">
             <table class="table">
@@ -20,11 +20,11 @@
                         <th scope="col">Desc</th>
                         <th scope="col">SubDesc</th>
                         <th scope="col">SalePrice</th>
-                        <th scope="col">CostPrice</th>
+                 @*       <th scope="col">CostPrice</th>
                         <th scope="col">DiscountPercent</th>
                         <th scope="col">PageSize</th>
                         <th scope="col">IsAvailable</th>
-                        <th scope="col">Rate</th>
+                        <th scope="col">Rate</th>*@
                         <th scope="col">Actions</th>
 
 
@@ -42,11 +42,11 @@
                         <td>@book.Desc</td>
                         <td>@book.SubDesc</td>
                         <td>@book.SalePrice</td>
-                        <td>@book.CostPrice</td>
+            @*            <td>@book.CostPrice</td>
                         <td>@book.DiscountPercent</td>
                         <td>@book.PageSize</td>
                         <td>@book.IsAvailable</td>
-                        <td>@book.Rate</td>
+                        <td>@book.Rate</td>*@
                         <td>
                             <a class="btn btn-warning">Edit</a>
                             <a class="btn btn-danger">Delete</a>
