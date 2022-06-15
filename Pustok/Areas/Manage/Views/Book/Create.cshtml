@@ -69,11 +69,29 @@
                         <input asp-for="Rate" class="form-control">
                         <span class="text-danger" asp-validation-for="Rate"></span>
                     </div>
+                </div>
+                <div class="row">
                     <div class="mb-3 col-md-4 d-flex align-items-center">
                         <div class="custom-control custom-checkbox small">
                             <input asp-for="IsAvailable" type="checkbox" class="custom-control-input">
                             <label asp-for="IsAvailable" class="custom-control-label">
                                 IsAvaliable
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mb-3 col-md-4 d-flex align-items-center">
+                        <div class="custom-control custom-checkbox small">
+                            <input asp-for="IsFeatured" type="checkbox" class="custom-control-input">
+                            <label asp-for="IsFeatured" class="custom-control-label">
+                                IsFeatured
+                            </label>
+                        </div>
+                    </div>
+                    <div class="mb-3 col-md-4 d-flex align-items-center">
+                        <div class="custom-control custom-checkbox small">
+                            <input asp-for="IsNew" type="checkbox" class="custom-control-input">
+                            <label asp-for="IsNew" class="custom-control-label">
+                                IsNew
                             </label>
                         </div>
                     </div>
