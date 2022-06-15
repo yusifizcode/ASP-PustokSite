@@ -10,7 +10,6 @@ namespace Pustok.Models
 {
     public class Book
     {
-
         public int Id { get; set; }
         public int GenreId { get; set; }
         public int AuthorId { get; set; }
@@ -27,15 +26,27 @@ namespace Pustok.Models
         public int PageSize { get; set; }
         public bool IsAvailable { get; set; }
         public byte Rate { get; set; }
+        public bool IsNew { get; set; }
+        public bool IsFeatured { get; set; }
 
         public Genre Genre { get; set; }
         public Author Author { get; set; }
-        public List<BookImage> BookImages { get; set; }
+        public List<BookImage> BookImages { get; set; } = new List<BookImage>();
 
         [NotMapped]
         public IFormFile PosterFile { get; set; }
 
         [NotMapped]
-        public IFormFile HoverPoster { get; set; }
+        public IFormFile HoverPosterFile { get; set; }
+
+        [NotMapped]
+        public List<IFormFile> ImageFiles { get; set; }
+
+        [NotMapped]
+        public List<int> ImageIds { get; set; }
+
+        public List<BookTag> BookTags { get; set; } = new List<BookTag>();
+        [NotMapped]
+        public List<int> TagIds { get; set; } = new List<int>();
     }
 }
