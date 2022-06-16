@@ -483,3 +483,4 @@ C:\Users\Yusifiz\Desktop\AspPustok\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1
 C:\Users\Yusifiz\Desktop\AspPustok\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Tag\Edit.cshtml.g.cs
 C:\Users\Yusifiz\Desktop\AspPustok\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Book\Edit.cshtml.g.cs
 C:\Users\Yusifiz\Desktop\AspPustok\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_BookTabSliderPartial.cshtml.g.cs
+C:\Users\Yusifiz\Desktop\AspPustok\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_BookModalPartial.cshtml.g.cs

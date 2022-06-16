@@ -4,12 +4,20 @@
         let url = $(this).attr('href')
 
         fetch(url)
-            .then(response => response.text())
-            .then(data => {
-
+            .then(response => {
+                console.log(url)
+                if (!response.ok) {
+                    alert("Error");
+                    return;
+                }
+                return response.text();
             })
-
-        $("#bookDetailModal").modal('show');
+            .then(data => {
+                if (data) {
+                    $("#bookDetailModal .modal-content").html(data);
+                    $("#bookDetailModal").modal('show');
+                }
+            })
 
 
     })

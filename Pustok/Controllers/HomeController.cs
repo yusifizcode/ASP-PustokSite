@@ -37,20 +37,12 @@ namespace Pustok.Controllers
 
         public IActionResult GetBookDetail(int id)
         {
-            Book book = _context.Books.FirstOrDefault(x=>x.Id == id);
+            Book book = _context.Books.Include(x=>x.Genre).Include(x=>x.Author).Include(x=>x.BookImages).FirstOrDefault(x=>x.Id == id);
 
             if (book == null)
                 return NotFound();
 
-            return Json(new Book {
-                Name = book.Name,
-                TagIds = book.TagIds,
-                SalePrice = book.SalePrice,
-                IsAvailable = book.IsAvailable,
-                DiscountPercent = book.DiscountPercent,
-                Desc = book.Desc,
-                BookImages= book.BookImages
-            }) ;
+            return PartialView("_BookModalPartial",book);
         }
     }
 }
