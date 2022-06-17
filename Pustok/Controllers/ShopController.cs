@@ -1,5 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Pustok.DAL;
+using Pustok.Models;
 using Pustok.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -23,6 +25,27 @@ namespace Pustok.Controllers
                 Genres = _context.Genres.ToList(),
             };
             return View(shopVM);
+        }
+
+        public IActionResult Detail(int id)
+        {
+            Book book = _context.Books
+                .Include(x=>x.Author)
+                .Include(x=>x.Genre)
+                .Include(x=>x.BookImages)
+                .Include(x=>x.BookTags)
+                .ThenInclude(x=>x.Tag).FirstOrDefault(x => x.Id == id);
+
+            if (book == null)
+                return RedirectToAction("error", "dashboard");
+
+            BookDetailViewModel detailVM = new BookDetailViewModel
+            {
+                Book = book,
+                RelatedBooks = _context.Books.Where(x => x.GenreId == book.GenreId).Take(6).ToList()
+            };
+
+            return View(detailVM);
         }
     }
 }

@@ -1,0 +1,40 @@
+﻿@using Pustok.Services
+@inject LayoutService layoutService
+@{
+    Dictionary<string, string> settings = layoutService.GetSettings();
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        
+        <div class="col-md-10 mx-auto">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Header Logo</th>
+                        <th scope="col">Footer Logo</th>
+                        <th scope="col">Support Phone</th>
+                        <th scope="col">Contact Phone</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">Email</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>@settings["HeaderLogo"]</td>
+                        <td>@settings["FooterLogo"]</td>
+                        <td>@settings["SupportPhone"]</td>
+                        <td>@settings["ContactPhone"]</td>
+                        <td>@settings["Address"]</td>
+                        <td>@settings["Email"]</td>
+                        <td>
+                            @*<a asp-action="edit" asp-route-id="@setting" class="btn btn-warning">Edit</a>*@
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
