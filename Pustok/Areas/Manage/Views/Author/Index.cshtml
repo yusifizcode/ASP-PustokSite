@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 mx-auto">
-            <a class="btn btn-primary">Create</a>
+            <a asp-action="create" class="btn btn-primary">Create</a>
         </div>
         <div class="col-md-10 mx-auto">
             <table class="table">
@@ -32,8 +32,8 @@
                             <td>@auth.BirthDate.ToString("dd-MM-yyyy")</td>
                             <td>@auth.Books.Count</td>
                             <td>
-                                <a class="btn btn-warning">Edit</a>
-                                <a class="btn btn-danger">Delete</a>
+                                <a asp-action="edit" asp-route-id="@auth.Id" class="btn btn-warning">Edit</a>
+                                <a asp-action="delete" asp-route-id="@auth.Id" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                     }

@@ -30,6 +30,7 @@ namespace Pustok.Areas.Manage.Controllers
             return View();
         }
 
+        [HttpPost]
         public IActionResult Create(Author author)
         {
             if (!ModelState.IsValid)

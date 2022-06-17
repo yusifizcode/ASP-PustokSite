@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Pustok.DAL;
+using Pustok.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,8 +30,10 @@ namespace Pustok
 
             services.AddDbContext<PustokDbContext>(options =>
             {
-                options.UseSqlServer(@"Server=DESKTOP-1TG370G; Database=Pustok; Trusted_Connection=TRUE");
+                options.UseSqlServer(@"Server=DESKTOP-PGOASLP\SQLEXPRESS; Database=pustokdb; Trusted_Connection=TRUE");
             });
+
+            services.AddScoped<LayoutService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
