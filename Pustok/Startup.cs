@@ -32,7 +32,7 @@ namespace Pustok
 
             services.AddDbContext<PustokDbContext>(options =>
             {
-                options.UseSqlServer(@"Server=DESKTOP-1TG370G; Database=pustokdb; Trusted_Connection=TRUE");
+                options.UseSqlServer(@"Server=DESKTOP-PGOASLP\SQLEXPRESS; Database=pustokdb; Trusted_Connection=TRUE");
             });
 
             services.AddScoped<LayoutService>();
@@ -65,13 +65,16 @@ namespace Pustok
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
+
                 endpoints.MapControllerRoute(
                     name: "manage",
                     pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
+                
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
