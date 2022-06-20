@@ -28,24 +28,27 @@ namespace Pustok.Areas.Manage.Controllers
             return View();
         }
 
-        public async Task<IActionResult> CreateAdmin()
-        {
-            AppUser admin = new AppUser
-            {
-                FullName = "Super Admin",
-                UserName = "SuperAdmin",
-                IsAdmin = true,
-            };
 
-            var result = await _userManager.CreateAsync(admin,"Admin123");
+        //CREATE DEFAULT SUPER ADMIN
 
-            if (!result.Succeeded)
-                return Ok(result.Errors);
+        //public async Task<IActionResult> CreateAdmin()
+        //{
+        //    AppUser admin = new AppUser
+        //    {
+        //        FullName = "Super Admin",
+        //        UserName = "SuperAdmin",
+        //        IsAdmin = true,
+        //    };
 
-            await _userManager.AddToRoleAsync(admin, "SuperAdmin");
+        //    var result = await _userManager.CreateAsync(admin, "Admin123");
 
-            return View();
-        }
+        //    if (!result.Succeeded)
+        //        return Ok(result.Errors);
+
+        //    await _userManager.AddToRoleAsync(admin, "SuperAdmin");
+
+        //    return View();
+        //}
 
         public async Task<IActionResult> CreateRoles()
         {

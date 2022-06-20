@@ -34,28 +34,39 @@
                     @foreach (var book in Model)
                     {
                         count++;
-                    <tr>
-                        <th scope="row">@count</th>
-                        <td>@book.Genre.Name</td>
-                        <td>@book.Author.FullName</td>
-                        <td>@book.Name</td>
-                        <td>@book.Desc</td>
-                        <td>@book.SubDesc</td>
-                        <td>@book.SalePrice</td>
-            @*            <td>@book.CostPrice</td>
-                        <td>@book.DiscountPercent</td>
-                        <td>@book.PageSize</td>
-                        <td>@book.IsAvailable</td>
-                        <td>@book.Rate</td>*@
-                        <td>
-                            <a asp-action="edit" asp-route-id="@book.Id" class="btn btn-warning">Edit</a>
-                            <a asp-action="delete" asp-route-id="@book.Id" class="btn btn-danger">Delete</a>
-                        </td>
-                    </tr>
+                        <tr>
+                            <th scope="row">@count</th>
+                            <td>@book.Genre.Name</td>
+                            <td>@book.Author.FullName</td>
+                            <td>@book.Name</td>
+                            <td>@book.Desc</td>
+                            <td>@book.SubDesc</td>
+                            <td>@book.SalePrice</td>
+                            @*            <td>@book.CostPrice</td>
+                <td>@book.DiscountPercent</td>
+                <td>@book.PageSize</td>
+                <td>@book.IsAvailable</td>
+                <td>@book.Rate</td>*@
+                            <td>
+                                <a asp-action="edit" asp-route-id="@book.Id" class="btn btn-warning">Edit</a>
+                                <a asp-action="delete" asp-route-id="@book.Id" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
                     }
 
                 </tbody>
             </table>
+                    <div aria-label="Page navigation example">
+                        <ul class="pagination">
+                            @for (int i = 1; i < ViewBag.PageCount + 1; i++)
+                            {
+                                <li class="page-item"><a class="page-link" asp-action="index" asp-controller="book" asp-route-page="@i">@i</a></li>
+                            }
+                            <!--<li class="page-item">-->@*<a class="page-link" asp-action="index" asp-controller="Genre" asp-route-page="@i">@i</a>*@<!--</li>-->
+                            <li class="page-item"><a class="page-link" asp-action="index" asp-controller="book" asp-route-page="@ViewBag.NextPage">Next</a></li>
+
+                        </ul>
+                    </div>
         </div>
     </div>
 </div>

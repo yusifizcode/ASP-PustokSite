@@ -32,7 +32,7 @@ namespace Pustok
 
             services.AddDbContext<PustokDbContext>(options =>
             {
-                options.UseSqlServer(@"Server=DESKTOP-PGOASLP\SQLEXPRESS; Database=pustokdb; Trusted_Connection=TRUE");
+                options.UseSqlServer(@"Server=DESKTOP-1TG370G; Database=pustokdb; Trusted_Connection=TRUE");
             });
 
             services.AddScoped<LayoutService>();
