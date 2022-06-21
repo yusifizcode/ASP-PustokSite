@@ -22,11 +22,6 @@
                         <th scope="col">Desc</th>
                         <th scope="col">SubDesc</th>
                         <th scope="col">SalePrice</th>
-                 @*       <th scope="col">CostPrice</th>
-                        <th scope="col">DiscountPercent</th>
-                        <th scope="col">PageSize</th>
-                        <th scope="col">IsAvailable</th>
-                        <th scope="col">Rate</th>*@
                         <th scope="col">Actions</th>
 
 
@@ -44,11 +39,6 @@
                             <td>@book.Desc</td>
                             <td>@book.SubDesc</td>
                             <td>@book.SalePrice</td>
-                            @*            <td>@book.CostPrice</td>
-                <td>@book.DiscountPercent</td>
-                <td>@book.PageSize</td>
-                <td>@book.IsAvailable</td>
-                <td>@book.Rate</td>*@
                             <td>
                                 <a asp-action="edit" asp-route-id="@book.Id" class="btn btn-warning">Edit</a>
                                 <a asp-action="delete" asp-route-id="@book.Id" class="btn btn-danger">Delete</a>

@@ -50,13 +50,75 @@ namespace Pustok.Areas.Manage.Controllers
         //    return View();
         //}
 
-        public async Task<IActionResult> CreateRoles()
+        public async Task<IActionResult> Roles()
         {
-            await _roleManager.CreateAsync(new IdentityRole("SuperAdmin"));
-            await _roleManager.CreateAsync(new IdentityRole("Admin"));
-            await _roleManager.CreateAsync(new IdentityRole("Member"));
+            var roles = await _roleManager.Roles.ToListAsync();
 
-            return Ok();
+            return View(roles);
+        }
+
+        public IActionResult CreateRole()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateRole(IdentityRole role)
+        {
+            var result = await _roleManager.CreateAsync(new IdentityRole(role.Name));
+
+            if (!result.Succeeded)
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError("Name", item.Description);
+                }
+            }
+
+            return RedirectToAction("roles");
+        }
+
+
+        public async Task<IActionResult> Index()
+        {
+            var users = await _userManager.Users.ToListAsync();
+            return View(users);
+        }
+
+
+        public async Task<IActionResult> CreateAdmin()
+        {
+            ViewBag.Roles = await _roleManager.Roles.ToListAsync();
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CreateAdmin(CreateAdminViewModel adminVM)
+        {
+            if (!ModelState.IsValid)
+                return View();
+
+            AppUser admin = new AppUser
+            {
+                FullName = adminVM.FullName,
+                UserName = adminVM.UserName,
+                Email = adminVM.Email,
+                IsAdmin = true
+            };
+
+            var result = await _userManager.CreateAsync(admin, adminVM.Password);
+            await _userManager.AddToRoleAsync(admin, "Admin");
+
+            if (!result.Succeeded)
+            {
+                foreach (var item in result.Errors)
+                {
+                    ModelState.AddModelError("",item.Description);
+                    return View();
+                }
+            }
+
+            return RedirectToAction("index", "account");
         }
 
         [HttpPost]

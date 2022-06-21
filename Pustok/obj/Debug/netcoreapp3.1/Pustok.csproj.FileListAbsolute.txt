@@ -528,3 +528,7 @@ C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Razor\Are
 C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Razor\Views\Account\Index.cshtml.g.cs
 C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_MemberLoginFormPartial.cshtml.g.cs
 C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_MemberRegisterFormPartial.cshtml.g.cs
+C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Account\Roles.cshtml.g.cs
+C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Account\CreateRole.cshtml.g.cs
+C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Account\Index.cshtml.g.cs
+C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Account\CreateAdmin.cshtml.g.cs
