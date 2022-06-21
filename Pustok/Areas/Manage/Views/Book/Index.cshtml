@@ -1,7 +1,9 @@
 ﻿
 @{
     ViewData["Title"] = "Index";
-    int count = 0;
+    int page = ViewBag.Page;
+    int totalPages = ViewBag.TotalPage;
+    int count = (page - 1) * 2;
 }
 
 <div class="container">
@@ -58,12 +60,34 @@
             </table>
                     <div aria-label="Page navigation example">
                         <ul class="pagination">
-                            @for (int i = 1; i < ViewBag.PageCount + 1; i++)
+                            <li class="page-item @(page==1?"disabled":"")"><a class="page-link" asp-action="index" asp-route-page="1"><<</a></li>
+                            <li class="page-item @(page==1?"disabled":"")"><a class="page-link" asp-action="index" asp-route-page="@(page-1)"><</a></li>
+                            @if (page == 1)
                             {
-                                <li class="page-item"><a class="page-link" asp-action="index" asp-controller="book" asp-route-page="@i">@i</a></li>
+                                for (int i = page; i <= page + 2; i++)
+                                {
+                                    <li class="page-item @(page==i?"active":"")"><a class="page-link" asp-action="index" asp-route-page="@i">@i</a></li>
+
+                                }
                             }
-                            <!--<li class="page-item">-->@*<a class="page-link" asp-action="index" asp-controller="Genre" asp-route-page="@i">@i</a>*@<!--</li>-->
-                            <li class="page-item"><a class="page-link" asp-action="index" asp-controller="book" asp-route-page="@ViewBag.NextPage">Next</a></li>
+                            else if (page == totalPages)
+                            {
+                                for (int i = page - 2; i <= page; i++)
+                                {
+                                    <li class="page-item @(page==i?"active":"")"><a class="page-link" asp-action="index" asp-route-page="@i">@i</a></li>
+
+                                }
+                            }
+                            else
+                            {
+                                for (int i = page - 1; i <= page + 1; i++)
+                                {
+                                    <li class="page-item @(page==i?"active":"")"><a class="page-link" asp-action="index" asp-route-page="@i">@i</a></li>
+
+                                }
+                            }
+                            <li class="page-item @(page==totalPages?"disabled":"")"><a class="page-link" asp-action="index" asp-route-page="@(page+1)">></a></li>
+                            <li class="page-item @(page==totalPages?"disabled":"")"><a class="page-link" asp-action="index" asp-route-page="@totalPages">>></a></li>
 
                         </ul>
                     </div>

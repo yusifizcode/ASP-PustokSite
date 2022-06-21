@@ -23,33 +23,14 @@ namespace Pustok.Areas.Manage.Controllers
             _context = context;
             _env = env;
         }
-        public IActionResult Index(int page)
+        public IActionResult Index(int page=1)
         {
-            var books = _context.Books.Include(x => x.Author).Include(x => x.Genre).ToList();
 
-            ViewBag.NextPage = page + 1;
+            ViewBag.Page = page;
+            ViewBag.TotalPage = (int)Math.Ceiling(_context.Books.Include(x => x.Author).Include(x => x.Genre).Count() / 2d);
+            var data = _context.Books.Include(x => x.Author).Include(x => x.Genre).Skip((page - 1) * 2).Take(2).ToList();
 
-            if(books.Count % 2 == 0)
-            {
-                ViewBag.PageCount = books.Count / 2;
-            }
-            else
-            {
-                ViewBag.PageCount = (books.Count / 2) + 1;
-            }
-
-            if(page != 0)
-            {
-                books = _context.Books.Include(x => x.Author).Include(x => x.Genre).Skip((page - 1) * 2).Take(2).ToList();
-                return View(books);
-            }
-            else
-            {
-                books = _context.Books.Include(x => x.Author).Include(x => x.Genre).Take(2).ToList();
-                return View(books);
-            }
-
-            //return View(books);
+            return View(data);
         }
 
         public IActionResult Create()
