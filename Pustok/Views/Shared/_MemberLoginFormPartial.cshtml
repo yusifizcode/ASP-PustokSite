@@ -16,6 +16,7 @@
                 <label asp-for="LoginPassword">Password</label>
                 <input asp-for="LoginPassword" class="mb-0 form-control" placeholder="Enter your password">
                 <span class="text-danger" asp-validation-for="@Model.LoginPassword"></span>
+                <a asp-action="forgot">Forgot password</a>
             </div>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 

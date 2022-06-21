@@ -532,3 +532,5 @@ C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Razor\Are
 C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Account\CreateRole.cshtml.g.cs
 C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Account\Index.cshtml.g.cs
 C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Razor\Areas\Manage\Views\Account\CreateAdmin.cshtml.g.cs
+C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Razor\Views\Account\Forgot.cshtml.g.cs
+C:\Users\Yusifiz\Desktop\ASP-PustokSite\Pustok\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetPassword.cshtml.g.cs
