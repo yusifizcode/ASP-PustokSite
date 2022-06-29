@@ -42,7 +42,8 @@ namespace Pustok.Controllers
             BookDetailViewModel detailVM = new BookDetailViewModel
             {
                 Book = book,
-                RelatedBooks = _context.Books.Where(x => x.GenreId == book.GenreId).Take(6).ToList()
+                RelatedBooks = _context.Books.Where(x => x.GenreId == book.GenreId).Take(6).ToList(),
+                BookComment = new PostBookCommentViewModel { BookId = id}
             };
 
             return View(detailVM);

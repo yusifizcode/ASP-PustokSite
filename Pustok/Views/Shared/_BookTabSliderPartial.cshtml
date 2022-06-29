@@ -17,11 +17,11 @@
         <div class="single-slide">
             <div class="product-card">
                 <div class="product-header">
-                    <a href="#" class="author">
+                    <a asp-action="detail" asp-controller="shop" asp-route-id="@item.Id" class="author">
                         @item.Author.FullName
                     </a>
                     <h3>
-                        <a href="product-details.html">
+                        <a asp-action="detail" asp-controller="shop" asp-route-id="@item.Id">
                             @item.Name
                         </a>
                     </h3>
@@ -30,7 +30,7 @@
                     <div class="card-image">
                         <img src="~/uploads/books/@item.BookImages.FirstOrDefault(x=>x.PosterStatus==true)?.Name" alt="">
                         <div class="hover-contents">
-                            <a href="product-details.html" class="hover-image">
+                            <a asp-action="detail" asp-controller="shop" asp-route-id="@item.Id" class="hover-image">
                                 <img src="~/uploads/books/@item.BookImages.FirstOrDefault(x=>x.PosterStatus==false)?.Name" alt="">
                             </a>
                             <div class="hover-btns">

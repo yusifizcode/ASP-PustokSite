@@ -1,0 +1,62 @@
+﻿@model List<Author>
+@{
+    ViewData["Title"] = "Index";
+    int page = ViewBag.Page;
+    int totalPages = ViewBag.TotalPages;
+    int count = (page-1)*2;
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+            <a asp-action="create" class="btn btn-primary">Create</a>
+        </div>
+        <div class="col-md-10 mx-auto">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">FullName</th>
+                        <th scope="col">BirthDate</th>
+                        <th scope="col">Books count</th>
+                        <th scope="col">Actions</th>
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var auth in Model)
+                    {
+                        count++;
+                        <tr>
+                            <th scope="row">@count</th>
+                            <td>@auth.FullName</td>
+                            <td>@auth.BirthDate.ToString("dd-MM-yyyy")</td>
+                            <td>@auth.Books.Count()</td>
+                            <td>
+                                <a asp-action="edit" asp-route-id="@auth.Id" class="btn btn-warning">Edit</a>
+                                <a asp-action="delete" asp-route-id="@auth.Id" class="btn btn-danger">Delete</a>
+                                <a asp-action="sweetdelete" asp-route-id="@auth.Id" class="btn btn-danger sweet-delete">Sweet delete</a>
+                            </td>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item @(page==1?"disabled":"")"><a class="page-link" asp-action="index" asp-route-page="1"><<</a></li>
+                    <li class="page-item @(page==1?"disabled":"")"><a class="page-link" asp-action="index" asp-route-page="@(page-1)"><</a></li>
+                    @for (int i = 1; i <= totalPages; i++)
+                    {
+                        <li class="page-item @(page==i?"active":"")"><a class="page-link" asp-action="index" asp-route-page="@i">@i</a></li>
+
+                    }
+                    <li class="page-item @(page==totalPages?"disabled":"")"><a class="page-link" asp-action="index" asp-route-page="@(page+1)">></a></li>
+                    <li class="page-item @(page==totalPages?"disabled":"")"><a class="page-link" asp-action="index" asp-route-page="@totalPages">>></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+

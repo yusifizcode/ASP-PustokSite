@@ -10,5 +10,6 @@ namespace Pustok.ViewModels
     {
         public Book Book { get; set; }
         public List<Book> RelatedBooks { get; set; }
+        public PostBookCommentViewModel BookComment { get; set; }
     }
 }

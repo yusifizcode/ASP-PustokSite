@@ -138,8 +138,16 @@ namespace Pustok.Controllers
 
         }
 
-        public IActionResult ResetPassword(string email,string token)
+        public async Task<IActionResult> ResetPassword(string email,string token)
         {
+
+            AppUser member = await _userManager.Users.FirstOrDefaultAsync(x => !x.IsAdmin && x.NormalizedEmail == email.ToUpper());
+            if (member == null)
+                return RedirectToAction("error", "dashboard");
+
+            if (!await _userManager.VerifyUserTokenAsync(member, _userManager.Options.Tokens.PasswordResetTokenProvider, "ResetPassword", token))
+                return RedirectToAction("error", "dashboard");
+
             MemberResetPasswordViewModel vm = new MemberResetPasswordViewModel
             {
                 Email = email,
